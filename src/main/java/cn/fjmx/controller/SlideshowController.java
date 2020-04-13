@@ -22,7 +22,7 @@ public class SlideshowController extends BaseController{
 
     @GetMapping("show")
     public JsonResult<List<Slideshow>> slideshows(){
-        List<Slideshow> list = service.slideshows();
+        List<Slideshow> list = service.slideshows(); 
         return new JsonResult<List<Slideshow>>(OK,list);
     }
 
