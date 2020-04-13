@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.fjmx.mapper.LabelSubheadMapper">
+	<resultMap id="LabelSubheadEntityMap"
+		type="cn.fjmx.entity.LabelSubhead">
+		<id column="subhead_id" property="subhead_id" />
+	</resultMap>
+	
+	<!-- List<LabelSubhead> findByLabelId(); -->
+	<select id="findByLabelId" resultMap="LabelSubheadEntityMap">
+		select 
+			<!-- label_id,
+			title_id,
+			String label_name,
+			String label_avatar,
+			String label_link  -->
+			*
+		from 
+			m_homepage_label_subhead
+		where 
+			label_id = #{label_id}	
+		
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+

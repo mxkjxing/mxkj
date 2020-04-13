@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.fjmx.mapper.ModuleMapper">
+	<resultMap id="ModuleEntityMap"
+		type="cn.fjmx.entity.Module">
+		<id column="module_id" property="module_id" />
+	</resultMap>
+	
+	<!-- public List<Module> findAll(); -->
+	<select id="findAll" resultMap="ModuleEntityMap">
+		select 
+			*
+		from 
+			m_homepage_module
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
