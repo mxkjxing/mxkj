@@ -13,11 +13,12 @@
 	<!-- List<Tomb> findAll(); -->
 	<select id="findAll" resultMap="LabelEntityMap">
 		select 
-			label_id,
+			<!-- label_id,
 			title_id,
 			String label_name,
 			String label_avatar,
-			String label_link 
+			String label_link  -->
+			*
 		from 
 			m_homepage_label
 	</select>
