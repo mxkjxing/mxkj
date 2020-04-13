@@ -16,8 +16,9 @@ public class LabelMapperTest {
 	@Autowired
 	private LabelMapper mapper;
 	@Test
-	public void findAll() {
-		List<Label> labels = mapper.findAll();
+	public void findByTitleId() {
+		Integer title_id = 1;
+		List<Label> labels = mapper.findByTitleId(title_id);
 		
 		for(Label label:labels) {
 			System.out.println(label.toString()); 

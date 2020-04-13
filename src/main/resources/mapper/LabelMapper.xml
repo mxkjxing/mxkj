@@ -8,8 +8,8 @@
 		<id column="label_id" property="label_id" />
 	</resultMap>
 	
-	<!-- List<Label> findAll(); -->
-	<select id="findAll" resultMap="LabelEntityMap">
+	<!-- List<Label> findByTitleId(); -->
+	<select id="findByTitleId" resultMap="LabelEntityMap">
 		select 
 			<!-- label_id,
 			title_id,
@@ -19,6 +19,8 @@
 			*
 		from 
 			m_homepage_label
+		where 
+			title_id = #{title_id}
 	</select>
 	
 </mapper>

@@ -11,5 +11,5 @@ public interface LabelMapper {
 	/**
 	 * 查询所有的首页_标签列表名
 	 */
-	List<Label> findAll();
+	List<Label> findByTitleId(Integer title_id);
 }
