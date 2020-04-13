@@ -2,8 +2,8 @@ package cn.fjmx.controller;
 
 import cn.fjmx.entity.Slideshow;
 import cn.fjmx.service.ISlideshowService;
+import cn.fjmx.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,15 +15,15 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("slide")
-public class SlideshowController {
+public class SlideshowController extends BaseController{
 
     @Autowired
     private ISlideshowService service;
 
     @GetMapping("show")
-    public List<Slideshow> slideshows(){
+    public JsonResult<List<Slideshow>> slideshows(){
         List<Slideshow> list = service.slideshows();
-        return list;
+        return new JsonResult<List<Slideshow>>(OK,list);
     }
 
 }
