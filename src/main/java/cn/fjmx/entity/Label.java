@@ -10,7 +10,7 @@ public class Label extends BaseEntity{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3154125664119430365L;
+	private static final long serialVersionUID = -7593166851097963230L;
 	private Integer label_id;
 	private Integer title_id;
 	private String label_name;
@@ -20,11 +20,7 @@ public class Label extends BaseEntity{
 	private Date createTime;
 	private String modifiedUser;
 	private Date modifiedTime;
-	private String obligate1;
-	private String obligate2;
-	private String obligate3;
-	private String obligate4;
-	private String obligate5;
+	
 	public Integer getLabel_id() {
 		return label_id;
 	}
@@ -79,36 +75,6 @@ public class Label extends BaseEntity{
 	public void setLabel_link(String label_link) {
 		this.label_link = label_link;
 	}
-	public String getObligate1() {
-		return obligate1;
-	}
-	public void setObligate1(String obligate1) {
-		this.obligate1 = obligate1;
-	}
-	public String getObligate2() {
-		return obligate2;
-	}
-	public void setObligate2(String obligate2) {
-		this.obligate2 = obligate2;
-	}
-	public String getObligate3() {
-		return obligate3;
-	}
-	public void setObligate3(String obligate3) {
-		this.obligate3 = obligate3;
-	}
-	public String getObligate4() {
-		return obligate4;
-	}
-	public void setObligate4(String obligate4) {
-		this.obligate4 = obligate4;
-	}
-	public String getObligate5() {
-		return obligate5;
-	}
-	public void setObligate5(String obligate5) {
-		this.obligate5 = obligate5;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -137,9 +103,9 @@ public class Label extends BaseEntity{
 		return "Label [label_id=" + label_id + ", title_id=" + title_id + ", label_name=" + label_name
 				+ ", label_avatar=" + label_avatar + ", label_link=" + label_link + ", createdUser=" + createdUser
 				+ ", createTime=" + createTime + ", modifiedUser=" + modifiedUser + ", modifiedTime=" + modifiedTime
-				+ ", obligate1=" + obligate1 + ", obligate2=" + obligate2 + ", obligate3=" + obligate3 + ", obligate4="
-				+ obligate4 + ", obligate5=" + obligate5 + "]";
+				+ ", toString()=" + super.toString() + "]";
 	}
+	
 	
 	
 }

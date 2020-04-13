@@ -7,8 +7,6 @@ import java.util.Date;
  * 实体类的基类
  */
 abstract class BaseEntity implements Serializable {
-
-	
 	/**
 	 * 
 	 */
@@ -17,7 +15,7 @@ abstract class BaseEntity implements Serializable {
 	private Date createdTime;
 	private String modifiedUser;
 	private Date modifiedTime;
-
+	
 	public String getCreatedUser() {
 		return createdUser;
 	}

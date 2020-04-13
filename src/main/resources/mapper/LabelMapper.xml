@@ -3,21 +3,19 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <mapper namespace="cn.fjmx.mapper.LabelMapper">
-
 	<resultMap id="LabelEntityMap"
 		type="cn.fjmx.entity.Label">
 		<id column="label_id" property="label_id" />
 	</resultMap>
 	
-	 <!-- 获取所有墓园数据 -->
-	<!-- List<Tomb> findAll(); -->
+	<!-- List<Label> findAll(); -->
 	<select id="findAll" resultMap="LabelEntityMap">
 		select 
 			<!-- label_id,
 			title_id,
 			String label_name,
 			String label_avatar,
-			String label_link  -->
+			String label_link -->
 			*
 		from 
 			m_homepage_label
