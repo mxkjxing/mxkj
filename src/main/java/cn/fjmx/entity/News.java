@@ -6,11 +6,20 @@ import java.util.Objects;
  * 新闻相关的实体类
  */
 public class News extends BaseEntity{
-    private Integer nid;//  新闻id
-    private String title;// 标题
-    private String img;// 图片
-    private String url;// 地址
-    private String up_menu_title; //上级菜单标题
+    private Integer nid;    // 新闻id
+    private String title;   // 标题
+    private String img;     // 图片
+    private String url;     // 地址
+    private Integer heatPress; //热度
+    private String upMenuTitle; //上级菜单标题
+
+    public Integer getHeatPress() {
+        return heatPress;
+    }
+
+    public void setHeatPress(Integer heatPress) {
+        this.heatPress = heatPress;
+    }
 
     public Integer getNid() {
         return nid;
@@ -44,14 +53,13 @@ public class News extends BaseEntity{
         this.url = url;
     }
 
-    public String getUp_menu_title() {
-        return up_menu_title;
+    public String getUpMenuTitle() {
+        return upMenuTitle;
     }
 
-    public void setUp_menu_title(String up_menu_title) {
-        this.up_menu_title = up_menu_title;
+    public void setUpMenuTitle(String upMenuTitle) {
+        this.upMenuTitle = upMenuTitle;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -73,7 +81,7 @@ public class News extends BaseEntity{
                 ", title='" + title + '\'' +
                 ", img='" + img + '\'' +
                 ", url='" + url + '\'' +
-                ", up_menu_title='" + up_menu_title + '\'' +
+                ", upMenuTitle='" + upMenuTitle + '\'' +
                 "} " + super.toString();
     }
 }
