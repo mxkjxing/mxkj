@@ -29,6 +29,7 @@ public class NewsServiceImpl implements INewsService {
         for (News top : topTitles){
             //获取所有子新闻
             List<News> ns = mapper.findByUpMenuTitle(top.getTitle());
+            int index = 1;
             //遍历子新闻
             for (News n : ns){
                 //去除多余数据
@@ -36,6 +37,11 @@ public class NewsServiceImpl implements INewsService {
                 n.setCreatedUser(null);
                 n.setCreatedTime(null);
                 n.setModifiedUser(null);
+                n.setHeatPress(null);
+                if(index > 1){
+                    n.setImg(null);
+                }
+                index++;
             }
             //实例化一个vo类准备填充数据
             NewsVO vo = new NewsVO();
