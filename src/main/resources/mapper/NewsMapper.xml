@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.fjmx.mapper.NewsMapper" >
+    <resultMap id="NewsMapper" type="cn.fjmx.entity.News">
+        <id column="nid" property="nid"/>
+		<result column="up_menu_title" property="upMenuTitle"/>
+		<result column="heat_press" property="heatPress"/>
+    </resultMap>
+
+	<!--* 获取顶部标题
+	public List<News> findByTopTitle();-->
+	<select id="findByTopTitle" resultMap="NewsMapper">
+		select
+			*
+		from
+			homepage_news
+		where
+			up_menu_title is null
+	</select>
+
+	<!--* 根据上级标题获取底部数据
+	public List<News> findByUpMenuTitle(String title);-->
+	<select id="findByUpMenuTitle" resultMap="NewsMapper">
+		select
+			*
+		from
+			homepage_news
+		where
+			up_menu_title = #{title}
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+

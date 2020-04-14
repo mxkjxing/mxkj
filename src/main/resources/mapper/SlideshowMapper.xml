@@ -9,17 +9,8 @@
         <result column="img_src" property="imgSrc"/>
     </resultMap>
 
-    <!--* 获取所有轮播图
-        public List<Slideshow> findAll();-->
-    <select id="findAll" resultMap="SlideshowMapper">
-		select
-			*
-		from
-			homepage_slideshow
-	</select>
-
 	<!--* 插入轮播图数据
-	Integer insert(Slideshow slideshow);-->
+    Integer insert(Slideshow slideshow);-->
 	<insert id="insert" useGeneratedKeys="true" keyProperty="sid">
 		insert into homepage_slideshow (
 			sid, img_src,
@@ -34,6 +25,16 @@
 		) order by
 			desc
 	</insert>
+
+	<!--* 获取所有轮播图
+    public List<Slideshow> findAll();-->
+	<select id="findAll" resultMap="SlideshowMapper">
+		select
+		*
+		from
+		homepage_slideshow
+	</select>
+
 
 </mapper>
 
