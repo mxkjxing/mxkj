@@ -1,10 +1,15 @@
 package cn.fjmx.entity;
 
 public class ModuleLabel extends BaseEntity{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8325205259851920814L;
 	private Integer module_label_id;
 	private Integer module_id;
 	private String module_label_name;
 	private String module_label_link;
+	private Integer is_default;
 	public Integer getModule_label_id() {
 		return module_label_id;
 	}
@@ -28,6 +33,12 @@ public class ModuleLabel extends BaseEntity{
 	}
 	public void setModule_label_link(String module_label_link) {
 		this.module_label_link = module_label_link;
+	}
+	public Integer getIs_default() {
+		return is_default;
+	}
+	public void setIs_default(Integer is_default) {
+		this.is_default = is_default;
 	}
 	@Override
 	public int hashCode() {
@@ -55,8 +66,9 @@ public class ModuleLabel extends BaseEntity{
 	@Override
 	public String toString() {
 		return "ModuleLabel [module_label_id=" + module_label_id + ", module_id=" + module_id + ", module_label_name="
-				+ module_label_name + ", module_label_link=" + module_label_link + ", toString()=" + super.toString()
-				+ "]";
+				+ module_label_name + ", module_label_link=" + module_label_link + ", is_default=" + is_default
+				+ ", toString()=" + super.toString() + "]";
 	}
+	
 	
 }

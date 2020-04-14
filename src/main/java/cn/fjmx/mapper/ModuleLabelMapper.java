@@ -13,5 +13,5 @@ public interface ModuleLabelMapper {
 	 * 根据Module_id查找模块框架的标签
 	 * @return
 	 */
-	public List<ModuleLabel> findByModuleId();
+	public List<ModuleLabel> findByModuleId(Integer module_id);
 }
