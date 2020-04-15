@@ -18,23 +18,19 @@ public class NewsMapperTest {
 	private NewsMapper mapper;
 
 	@Test
-	public void findByTopTitle(){
-		List<News> list = mapper.findByTopTitle();
+	public void findHomepageTopTitle(){
+		List<News> list = mapper.findHomepageTopTitle();
 		for (News n : list){
 			System.out.println(n);
 		}
 	}
 
 	@Test
-	public void findByUpMenuTitle(){
-		List<News> list = mapper.findByTopTitle();
-		for(News n : list){
-			List<News> news = mapper.findByUpMenuTitle(n.getTitle());
-			for (News ns : news){
-				System.out.println(ns);
-			}
-			System.out.println("------------");
+	public void findByUpMenuId() {
+		List<News> news = mapper.findByUpMenuId(1);
+		for (News ns : news) {
+			System.out.println(ns);
 		}
+		System.out.println("------------");
 	}
-
 }

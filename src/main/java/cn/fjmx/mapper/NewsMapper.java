@@ -10,15 +10,22 @@ import java.util.List;
 public interface NewsMapper {
 
     /**
-     * 获取顶部标题
+     * 获取首页顶部标题
      * @return
      */
-    public List<News> findByTopTitle();
+    public List<News> findHomepageTopTitle();
 
     /**
-     * 根据上级标题获取底部数据
+     * 根据上级新闻id获取底部首页的数据
      * @return
      */
-    public List<News> findByUpMenuTitle(String title);
+    public List<News> findHomepageNewsTitleByNId(Integer nid);
+
+    /**
+     * 根据上级新闻id获取底部数据
+     * @return
+     */
+    public List<News> findByUpMenuId(Integer nid);
+
 
 }

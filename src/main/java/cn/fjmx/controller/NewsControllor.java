@@ -23,11 +23,11 @@ public class NewsControllor extends BaseController {
     private INewsService service;
 
     /**
-     * 获取所有新闻动态
+     * 获取所有首页新闻动态
      */
-    @GetMapping("show")
-    public JsonResult<List<NewsVO>> showNews(){
-        List<NewsVO> list = service.showNews();
+    @GetMapping("show/homepage")
+    public JsonResult<List<NewsVO>> showHomepageNews(){
+        List<NewsVO> list = service.showHomepageNews();
         return new JsonResult<>(OK,list);
     }
 

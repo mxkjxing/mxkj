@@ -17,38 +17,38 @@ public class NewsServiceImpl implements INewsService {
     private NewsMapper mapper;
 
     /**
-     * 获取所有新闻动态
+     * 获取所有首页的新闻动态
      * @return
      */
-    public List<NewsVO> showNews(){
+    public List<NewsVO> showHomepageNews(){
         //需要返回的集合
         List<NewsVO> list = new ArrayList<>();
-        //所有顶部标题
-        List<News> topTitles = mapper.findByTopTitle();
-        //遍历顶部标题
-        for (News top : topTitles){
-            //获取所有子新闻
-            List<News> ns = mapper.findByUpMenuTitle(top.getTitle());
-            int index = 1;
-            //遍历子新闻
-            for (News n : ns){
-                //去除多余数据
-                n.setUpMenuTitle(null);
-                n.setCreatedUser(null);
-                n.setCreatedTime(null);
-                n.setModifiedUser(null);
-                n.setHeatPress(null);
-                if(index > 1){
+        //获取首页顶部标题
+        List<News> homepageTopTitle = mapper.findHomepageTopTitle();
+        for (News topTitle : homepageTopTitle) {
+            //获取顶部标题id
+            Integer topNid = topTitle.getNid();
+            //根据顶部标题id获取底部数据
+            List<News> newsList = mapper.findHomepageNewsTitleByNId(topNid);
+            int index = 0;
+            for (News n :newsList){
+                index++;
+                if (index > 1){
                     n.setImg(null);
                 }
-                index++;
+                n.setCreatedUser(null);
+                n.setModifiedUser(null);
+                n.setModifiedTime(null);
+                n.setUpMeunId(null);
+                n.setIsHomepage(null);
+                n.setHeatPress(null);
             }
-            //实例化一个vo类准备填充数据
             NewsVO vo = new NewsVO();
-            vo.setTopTitle(top.getTitle());
-            vo.setUrl(top.getUrl());
-            vo.setNews(ns);
-            //加入数据
+            //补全数据
+            vo.setTopTitleId(topTitle.getNid());
+            vo.setTopTitle(topTitle.getTitle());
+            vo.setTopTitleUrl(topTitle.getUrl());
+            vo.setNews(newsList);
             list.add(vo);
         }
         return list;

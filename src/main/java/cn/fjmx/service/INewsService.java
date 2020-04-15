@@ -12,9 +12,9 @@ import java.util.List;
 public interface INewsService {
 
     /**
-     * 获取所有新闻动态
+     * 获取所有首页的新闻动态
      * @return
      */
-    public List<NewsVO> showNews();
+    public List<NewsVO> showHomepageNews();
 
 }

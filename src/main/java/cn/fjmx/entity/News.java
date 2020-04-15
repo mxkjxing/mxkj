@@ -11,7 +11,24 @@ public class News extends BaseEntity{
     private String img;     // 图片
     private String url;     // 地址
     private Integer heatPress; //热度
-    private String upMenuTitle; //上级菜单标题
+    private Integer upMeunId; //上级菜单id
+    private Integer isHomepage; //是否在首页 0-否  1-是
+
+    public Integer getUpMeunId() {
+        return upMeunId;
+    }
+
+    public void setUpMeunId(Integer upMeunId) {
+        this.upMeunId = upMeunId;
+    }
+
+    public Integer getIsHomepage() {
+        return isHomepage;
+    }
+
+    public void setIsHomepage(Integer isHomepage) {
+        this.isHomepage = isHomepage;
+    }
 
     public Integer getHeatPress() {
         return heatPress;
@@ -53,14 +70,6 @@ public class News extends BaseEntity{
         this.url = url;
     }
 
-    public String getUpMenuTitle() {
-        return upMenuTitle;
-    }
-
-    public void setUpMenuTitle(String upMenuTitle) {
-        this.upMenuTitle = upMenuTitle;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,7 +90,9 @@ public class News extends BaseEntity{
                 ", title='" + title + '\'' +
                 ", img='" + img + '\'' +
                 ", url='" + url + '\'' +
-                ", upMenuTitle='" + upMenuTitle + '\'' +
+                ", heatPress=" + heatPress +
+                ", upMeunId=" + upMeunId +
+                ", isHomepage=" + isHomepage +
                 "} " + super.toString();
     }
 }

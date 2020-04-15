@@ -6,30 +6,42 @@
 <mapper namespace="cn.fjmx.mapper.NewsMapper" >
     <resultMap id="NewsMapper" type="cn.fjmx.entity.News">
         <id column="nid" property="nid"/>
-		<result column="up_menu_title" property="upMenuTitle"/>
+		<result column="up_menu_id" property="upMeunId"/>
 		<result column="heat_press" property="heatPress"/>
+		<result column="is_homepage" property="isHomepage"/>
     </resultMap>
 
 	<!--* 获取顶部标题
-	public List<News> findByTopTitle();-->
-	<select id="findByTopTitle" resultMap="NewsMapper">
+	public List<News> findHomepageTopTitle();-->
+	<select id="findHomepageTopTitle" resultMap="NewsMapper">
 		select
 			*
 		from
 			homepage_news
 		where
-			up_menu_title is null
+			is_homepage = 1
 	</select>
 
-	<!--* 根据上级标题获取底部数据
-	public List<News> findByUpMenuTitle(String title);-->
-	<select id="findByUpMenuTitle" resultMap="NewsMapper">
+	<!--* 根据上级新闻id获取底部首页的数据
+	public List<News> findHomepageNewsByNId(Integer nid);-->
+	<select id="findHomepageNewsTitleByNId" resultMap="NewsMapper">
 		select
 			*
 		from
-			homepage_news
+			news
 		where
-			up_menu_title = #{title}
+			up_menu_id = #{nid} and is_homepage = 1
+	</select>
+
+	<!--* 根据上级新闻id获取底部数据
+	public List<News> findByUpMenuId(Integer nid);-->
+	<select id="findByUpMenuId" resultMap="NewsMapper">
+		select
+			*
+		from
+			news
+		where
+			up_menu_id = #{nid}
 	</select>
 
 
