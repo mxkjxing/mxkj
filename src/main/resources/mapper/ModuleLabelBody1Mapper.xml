@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.fjmx.mapper.ModuleLabelBody1Mapper">
+	<resultMap id="ModuleLabelBody1EntityMap"
+		type="cn.fjmx.entity.ModuleLabelBody1">
+		<id column="module_label_body_1_id" property="module_label_body_1_id" />
+	</resultMap>
+	
+	<!-- 根据Label_id查找界面列表1内容集合 -->
+	<!-- public List<ModuleLabelBody1> findByLabelId(); -->
+	<select id="findByLabelId" resultMap="ModuleLabelBody1EntityMap">
+		select 
+			*
+		from 
+			m_homepage_module_label_body_1
+		where
+			module_label_id = #{module_label_id}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
