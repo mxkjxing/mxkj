@@ -16,6 +16,16 @@
 			m_homepage_module
 	</select>
 	
+	<!-- public void updateAvatar(@Param("module_id") 
+	Integer module_id,@Param("module_avatar") String module_avatar); -->
+	<update id="updateAvatarByMid">
+		update
+			m_homepage_module 
+		set 
+			module_avatar = #{module_avatar}
+		where
+			module_id = #{module_id}
+	</update>
 </mapper>
 
 

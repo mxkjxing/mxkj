@@ -1,12 +1,15 @@
 package cn.fjmx.entity;
 
-import java.util.Objects;
 
 /**
  * 轮播图相关的实体类
  */
 public class Slideshow extends BaseEntity{
-    private int sid;  //轮播图id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7664262995789720045L;
+	private int sid;  //轮播图id
     private String imgSrc;     //图片资源路径
     private String url; 	    //图片跳转链接
 

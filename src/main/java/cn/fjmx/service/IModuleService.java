@@ -16,5 +16,9 @@ public interface IModuleService {
 	 */
 	public List<ModuleVO> modules();
 	
-	
+	/**
+	 * 替换模块图片
+	 * @return
+	 */
+	public Integer updateAvatarMid(Integer module_id,String module_avatar);
 }

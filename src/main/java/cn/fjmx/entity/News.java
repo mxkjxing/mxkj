@@ -6,7 +6,11 @@ import java.util.Objects;
  * 新闻相关的实体类
  */
 public class News extends BaseEntity{
-    private Integer nid;    // 新闻id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6938515768541045592L;
+	private Integer nid;    // 新闻id
     private String title;   // 标题
     private String img;     // 图片
     private String url;     // 地址

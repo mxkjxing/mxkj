@@ -17,6 +17,7 @@ import cn.fjmx.mapper.ModuleLabelBody3Mapper;
 import cn.fjmx.mapper.ModuleLabelMapper;
 import cn.fjmx.mapper.ModuleMapper;
 import cn.fjmx.service.IModuleService;
+import cn.fjmx.service.ex.UpdateAvatarException;
 import cn.fjmx.vo.LabelAndBodyVO;
 import cn.fjmx.vo.ModuleVO;
 
@@ -92,6 +93,16 @@ public class ModuleServiceImpl implements IModuleService{
 			moduleVO = new ModuleVO();
 		}
 		return ModuleVOs;
+	}
+
+	@Override
+	public Integer updateAvatarMid(Integer module_id,String module_avatar) {
+		Integer rows = moduleMapper.updateAvatarMid(module_id, module_avatar);
+		if(rows!=1) {
+			throw new UpdateAvatarException("图片数据修改异常");
+		}
+		
+		return null;
 	}
 	
 }

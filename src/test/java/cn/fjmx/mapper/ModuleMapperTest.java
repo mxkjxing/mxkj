@@ -22,4 +22,11 @@ public class ModuleMapperTest {
 			System.err.println(module.toString());
 		}
 	}
+	
+	@Test
+	public void updateAvatar() {
+		Integer module_id = 1;
+		String module_avatar = "11111";
+		mapper.updateAvatarMid(module_id, module_avatar);
+	}
 }

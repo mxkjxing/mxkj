@@ -10,6 +10,7 @@ public class ModuleLabel extends BaseEntity{
 	private String module_label_name;
 	private String module_label_link;
 	private Integer is_default;
+	private String remarks;
 	public Integer getModule_label_id() {
 		return module_label_id;
 	}
@@ -40,6 +41,12 @@ public class ModuleLabel extends BaseEntity{
 	public void setIs_default(Integer is_default) {
 		this.is_default = is_default;
 	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,8 +74,9 @@ public class ModuleLabel extends BaseEntity{
 	public String toString() {
 		return "ModuleLabel [module_label_id=" + module_label_id + ", module_id=" + module_id + ", module_label_name="
 				+ module_label_name + ", module_label_link=" + module_label_link + ", is_default=" + is_default
-				+ ", toString()=" + super.toString() + "]";
+				+ ", remarks=" + remarks + ", toString()=" + super.toString() + "]";
 	}
+	
 	
 	
 }
